@@ -1,0 +1,16 @@
+li.item-cliente {
+  background: #FFF;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.02);
+  padding: 15px;
+}
+
+
+.nome-card strong {
+  font-size: 17px;
+  color: #999;
+  margin-top: 2px;
+}
+
+li.item-cliente div{
+  padding: 5px;
+}

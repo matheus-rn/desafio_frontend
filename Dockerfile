@@ -5,6 +5,6 @@ WORKDIR /app
 
 ADD . /app
 
-RUN npm install
+RUN yarn
 
-EXPOSE 8080
+EXPOSE 3000

@@ -4,8 +4,8 @@ services:
     container_name: "frontend"
     build: ./
     ports:
-      - "8080:8080"
-    command: bash -c "npm install; npm start"
+      - "3000:3000"
+    command: bash -c "yarn; yarn start"
     volumes:
       - ./:/app
     networks:
