@@ -10,6 +10,8 @@ function ClienteForm({ onSubmit }) {
   const [uf, setUf] = useState('');
   const [complemento, setComplemento] = useState('');
   const [telefone, setTelefone] = useState('');
+  const [cidade, setCidade] = useState('');
+
   const [email, setEmail] = useState('');
 
   async function getServiceCep(e) {
@@ -17,6 +19,7 @@ function ClienteForm({ onSubmit }) {
     if (cep) {
       const { data } = await axios.get(`https://viacep.com.br/ws/${cep}/json`);
       if (data) {
+        setCidade(data.localidade);
         setLogradouro(data.logradouro);
         setBairro(data.bairro);
         setUf(data.uf);
@@ -32,11 +35,11 @@ function ClienteForm({ onSubmit }) {
       cep,
       logradouro,
       bairro,
-      // cidade: 'brasilia',
+      cidade,
       uf,
-      // complemento_endereco,
-      telefone: ['(61) 99999-9999'],
-      email: ['matheus@matheus.com'],
+      complemento,
+      telefone,
+      email,
     });
 
     // setNome('');
@@ -107,6 +110,16 @@ function ClienteForm({ onSubmit }) {
           id="bairro_cliente"
           required
           value={bairro}
+          onChange={e => setBairro(e.target.value)}
+        />
+      </div>
+      <div className="input-block">
+        <label htmlFor="cidade_cliente">Cidade</label>
+        <input
+          name="cidade_cliente"
+          id="cidade_cliente"
+          required
+          value={cidade}
           onChange={e => setBairro(e.target.value)}
         />
       </div>

@@ -20,10 +20,19 @@ function ClienteItem({ cliente }) {
         <span>{cliente.bairro}</span>
       </div>
       <div>
+        <span>{cliente.cidade}</span>
+      </div>
+      <div>
         <span>{cliente.uf}</span>
       </div>
       <div>
-        <span>{cliente.telefone[0]}</span>
+        <span>{cliente.complemento}</span>
+      </div>
+      <div>
+        <span>{cliente.telefone}</span>
+      </div>
+      <div>
+        <span>{cliente.email}</span>
       </div>
     </li>
   );
